@@ -1107,7 +1107,7 @@ public class DiscordUtils {
     public void syncPlaceholders() {
         syncArgument("_general.instance", CraftPresence.instance);
         syncArgument("_general.player", CraftPresence.player);
-        syncArgument("_general.world", CraftPresence.player != null ? CraftPresence.player.world : null);
+        syncArgument("_general.world", CraftPresence.player != null ? CraftPresence.player.worldObj : null);
         syncArgument("_config.instance", CraftPresence.CONFIG);
         // Sync Custom Variables
         for (Map.Entry<String, String> entry : CraftPresence.CONFIG.displaySettings.dynamicVariables.entrySet()) {
