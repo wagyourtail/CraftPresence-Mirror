@@ -340,6 +340,8 @@ subprojects {
 
             tasks.getByName("assemble").dependsOn("shadeDowngradedApi")
             tasks.downgradeJar {
+                dependsOn(remapJar)
+                inputFile = remapJar.archiveFile.get().asFile
                 downgradeTo = JavaVersion.VERSION_1_7
                 debugSkipStubs.set(listOf(52))
                 destinationDirectory = temporaryDir
